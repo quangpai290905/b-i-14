@@ -1,0 +1,658 @@
+Quang Nghiện Đông Anh
+Oke
+Ra chưa bn
+Quang Nghiện Đông Anh
+@Việt Quang đâu
+Quang Nghiện Đông Anh
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "nav section aside"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            width: 99%;
+            height: 99vh;
+            margin: 0 auto;
+            background-color: orange; 
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            border-bottom: 10px solid orange;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #999;
+            padding: 20px;
+            border-radius: 10px;
+            border-bottom: 10px solid orange;
+        }
+
+        section {
+            grid-area: section;
+            display: flex;
+            flex-direction: column;
+            background-color: #bbb;
+            padding: 10px;
+            border-radius: 10px;
+            border-bottom: 10px solid orange;
+        }
+
+        section > header {
+            background-color: #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        article {
+            flex-grow: 1;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border-bottom: 10px solid orange;
+        }
+
+        section > footer {
+            background-color: #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: #999;
+            padding: 20px;
+            border-radius: 10px;
+            border-bottom: 10px solid orange;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+* {
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng của phần tử */
+    margin: 0; /* Loại bỏ margin mặc định của trình duyệt */
+    padding: 0; /* Loại bỏ padding mặc định của trình duyệt */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Sử dụng font Arial hoặc sans-serif nếu Arial không có */
+    background-color: #f5a623; /* Đặt màu nền cho trang là màu cam (#f5a623) */
+    display: grid; /* Dùng CSS Grid để tạo bố cục lưới cho toàn bộ trang */
+    grid-template-areas: /* Định nghĩa các khu vực bố cục chính */
+        "header header header" /* Hàng đầu tiên chứa header trải dài cả 3 cột */
+        "nav section aside" /* Hàng thứ hai chia thành 3 phần: nav, section, aside */
+        "footer footer footer"; /* Hàng cuối cùng là footer trải dài cả 3 cột */
+    grid-template-columns: 1fr 2fr 1fr; /* Bố cục gồm 3 cột: cột trái 1 phần, giữa 2 phần, và cột phải 1 phần */
+    grid-template-rows: auto 1fr auto; /* Các hàng được xác định: auto cho header/footer, 1fr cho phần giữa */
+    height: 100vh; /* Chiều cao của body sẽ chiếm toàn bộ chiều cao màn hình */
+    gap: 10px; /* Khoảng cách giữa các phần tử trong lưới là 10px */
+    padding: 10px; /* Đệm bên trong body là 10px */
+}
+
+header, nav, section, aside, footer {
+    background-color: #ddd; /* Màu nền xám nhạt cho tất cả các phần tử */
+    padding: 20px; /* Khoảng cách bên trong (padding) của các phần tử là 20px */
+    border-radius: 15px; /* Bo tròn góc cho tất cả các phần tử là 15px */
+}
+
+header {
+    grid-area: header; /* Gán phần tử này vào khu vực 'header' trong lưới */
+    background-color: #b0b0b0; /* Màu nền xám đậm hơn cho phần header */
+    border-radius: 15px; /* Bo tròn góc cho header là 15px */
+}
+
+nav {
+    grid-area: nav; /* Gán phần tử này vào khu vực 'nav' trong lưới */
+    background-color: #c0c0c0; /* Màu nền xám trung bình cho phần nav */
+    border-radius: 15px; /* Bo tròn góc cho nav là 15px */
+}
+
+section {
+    grid-area: section; /* Gán phần tử này vào khu vực 'section' trong lưới */
+    display: grid; /* Sử dụng grid bên trong section để bố trí các phần tử con */
+    grid-template-rows: auto 1fr auto; /* Chia section thành 3 hàng: header, article, footer */
+    gap: 10px; /* Khoảng cách giữa các phần tử con trong section là 10px */
+    background-color: #e0e0e0; /* Màu nền xám nhạt cho section */
+    border-radius: 15px; /* Bo tròn góc cho section là 15px */
+}
+
+section > header {
+    background-color: #b0b0b0; /* Màu nền xám đậm cho header bên trong section */
+    border-radius: 15px; /* Bo tròn góc cho header bên trong section là 15px */
+}
+
+article {
+background-color: #d0d0d0; /* Màu nền xám trung bình cho article */
+    padding: 10px; /* Đệm bên trong article là 10px */
+    border-radius: 15px; /* Bo tròn góc cho article là 15px */
+}
+
+section > footer {
+    background-color: #b0b0b0; /* Màu nền xám đậm cho footer bên trong section */
+    border-radius: 15px; /* Bo tròn góc cho footer bên trong section là 15px */
+}
+
+aside {
+    grid-area: aside; /* Gán phần tử này vào khu vực 'aside' trong lưới */
+    background-color: #c0c0c0; /* Màu nền xám trung bình cho aside */
+    border-radius: 15px; /* Bo tròn góc cho aside là 15px */
+}
+
+footer {
+    grid-area: footer; /* Gán phần tử này vào khu vực 'footer' trong lưới */
+    background-color: #b0b0b0; /* Màu nền xám đậm cho footer */
+    border-radius: 15px; /* Bo tròn góc cho footer là 15px */
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Example</title>
+    <link rel="stylesheet" href="Bài 13.css">
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <nav>
+        <p>Nav</p>
+    </nav>
+
+    <section>
+        <header>
+            <h2>Section Header</h2>
+        </header>
+
+        <article>
+            <p>Article</p>
+        </article>
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </section>
+
+    <aside>
+        <p>Aside</p>
+    </aside>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+</html>
+Đỗ Hoàng Dương
+border-radius: 15px;
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Demo with Section Borders</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "nav section aside"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            height: 100px;
+            background-color: orange;
+           
+          
+        }
+
+        header, nav, section, aside, footer {
+            background-color: lightgray;
+            padding: 20px;
+            border: 2px solid gray; /* Viền cho tất cả các phần tử */
+        }
+
+        header {
+            grid-area: header;
+            text-align: center;
+           border-radius: 15px;
+        }
+
+        nav {
+            grid-area: nav;
+            text-align: center;
+           border-radius: 15px;
+        }
+
+        section {
+            grid-area: section;
+            padding: 0; /* Loại bỏ padding của section để padding các phần tử bên trong */
+            text-align: center;
+          border-radius: 15px;
+        }
+      
+        
+        
+
+        section > header, section > footer {
+            padding: 20px;
+            border: 5px solid gray; /* Thêm viền cho các phần tử bên trong section */
+            margin: 10px;
+           border-radius: 15px;
+        }
+      article {
+        padding : 70px;
+        margin : 11px;
+        border: 5px solid gray;
+        border-radius: 15px;
+      }
+
+        aside {
+            grid-area: aside;
+            text-align: center;
+           border-radius: 15px;
+        }
+
+        footer {
+            grid-area: footer;
+            text-align: center;
+           border-radius: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <b>&lt;Header&gt;</b>
+    </header>
+
+    <nav>
+        <b>&lt;Nav&gt;</b>
+    </nav>
+
+    <section>
+        <b>&lt;Section&gt;</b>
+        <header>&lt; Header&gt;</header>
+        <article>
+            &lt;Article&gt;
+        </article>
+        <footer>&lt; Footer&gt;</footer>
+    </section>
+
+    <aside>
+       <b> &lt;Aside &gt;</b>
+    </aside>
+
+    <footer>
+        <b>&lt;Footer&gt;</b>
+    </footer>
+</body>
+</html>
+Quang Nghiện Đông Anh
+&lt;Aside&gt;
+* {
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng của phần tử */
+    margin: 0; /* Loại bỏ margin mặc định của trình duyệt */
+    padding: 0; /* Loại bỏ padding mặc định của trình duyệt */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Sử dụng font Arial hoặc sans-serif nếu Arial không có */
+    background-color: #f5a623; /* Đặt màu nền cho trang là màu cam (#f5a623) */
+    display: grid; /* Dùng CSS Grid để tạo bố cục lưới cho toàn bộ trang */
+    grid-template-areas: /* Định nghĩa các khu vực bố cục chính */
+        "header header header" /* Hàng đầu tiên chứa header trải dài cả 3 cột */
+        "nav section aside" /* Hàng thứ hai chia thành 3 phần: nav, section, aside */
+        "footer footer footer"; /* Hàng cuối cùng là footer trải dài cả 3 cột */
+    grid-template-columns: 1fr 2fr 1fr; /* Bố cục gồm 3 cột: cột trái 1 phần, giữa 2 phần, và cột phải 1 phần */
+    grid-template-rows: auto 1fr auto; /* Các hàng được xác định: auto cho header/footer, 1fr cho phần giữa */
+    height: 100vh; /* Chiều cao của body sẽ chiếm toàn bộ chiều cao màn hình */
+    gap: 10px; /* Khoảng cách giữa các phần tử trong lưới là 10px */
+    padding: 10px; /* Đệm bên trong body là 10px */
+}
+
+header, nav, section, aside, footer {
+    background-color: #ddd; /* Màu nền xám nhạt cho tất cả các phần tử */
+    padding: 20px; /* Khoảng cách bên trong (padding) của các phần tử là 20px */
+    border-radius: 15px; /* Bo tròn góc cho tất cả các phần tử là 15px */
+}
+
+header {
+    grid-area: header; /* Gán phần tử này vào khu vực 'header' trong lưới */
+    background-color: #b0b0b0; /* Màu nền xám đậm hơn cho phần header */
+    border-radius: 15px; /* Bo tròn góc cho header là 15px */
+    border: 5px solid gray;
+    text-align: center;
+}
+
+nav {
+    grid-area: nav; /* Gán phần tử này vào khu vực 'nav' trong lưới */
+    background-color: #c0c0c0; /* Màu nền xám trung bình cho phần nav */
+    border-radius: 15px; /* Bo tròn góc cho nav là 15px */
+    border: 5px solid gray;
+    font-size: 24px;
+}
+
+section {
+            grid-area: section;
+            display: flex;
+            flex-direction: column;
+            background-color: #c3c3c3;
+            padding: 10px;
+            border-radius: 10px;
+            border-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            border: 5px solid gray;
+        }
+ 
+
+section > header {
+            background-color: #c3c3c3;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 10px;
+            border: 5px solid gray;
+            position: relative;
+            top: 20px;
+        }
+
+
+article {
+    flex-grow: 1;
+background-color: #c3c3c3;
+    padding: 80px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border-bottom: 20px;
+    border: 5px solid gray;
+    position: relative;
+    top: 20px;
+    
+ }
+
+section > footer {
+        background-color: #c3c3c3;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        border: 5px solid gray;
+        position: relative;
+        bottom: 10px;
+
+
+}
+
+aside {
+    grid-area: aside; /* Gán phần tử này vào khu vực 'aside' trong lưới */
+    background-color: #c0c0c0; /* Màu nền xám trung bình cho aside */
+    border-radius: 15px; /* Bo tròn góc cho aside là 15px */
+    border: 5px solid gray;
+    font-size: 24px;
+}
+
+footer {
+    grid-area: footer; /* Gán phần tử này vào khu vực 'footer' trong lưới */
+    background-color: #b0b0b0; /* Màu nền xám đậm cho footer */
+    border-radius: 15px; /* Bo tròn góc cho footer là 15px */
+    border: 5px solid gray;
+    font-size: 24px;
+    text-align: center;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Example</title>
+    <link rel="stylesheet" href="Bài 13.css">
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <nav>
+        <p>Nav</p>
+    </nav>
+
+    <section>
+            Section
+        <header>
+            <h2>Header</h2>
+        </header>
+
+        <article>
+            <p>Article</p>
+        </article>
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </section>
+
+    <aside>
+        <p>Aside</p>
+    </aside>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+</html>
+Quang Nghiện Đông Anh
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout giống hình</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav content content"
+                "footer footer footer";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 100px 1fr 50px;
+            height: 100vh;
+        }
+        
+        header {
+            grid-area: header;
+            background-color: #b20034;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            border-bottom: 5px solid black;
+        }
+        
+        nav {
+            grid-area: nav;
+            background-color: #8a9a5b;
+            padding: 20px;
+            color: white;
+            border-right: 5px solid black;
+        }
+        
+        .content {
+            grid-area: content;
+            background-color: #b97339;
+            padding: 20px;
+            color: white;
+        }
+        
+        footer {
+            grid-area: footer;
+            background-color: #517b58;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            border-top: 5px solid black;
+        }
+        
+        .content img {
+            float: left;
+            margin-right: 20px;
+            width: 150px;
+            height: 150px;
+        }
+        
+        .content p {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <div class="content">
+            <img src="https://via.placeholder.com/150" alt="Image placeholder">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+        </div>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
+Đỗ Hoàng Dương
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "tren header header"
+                "nav content content"
+                "duoi footer footer";
+            grid-template-rows: 50px 1fr 50px;
+            grid-template-columns: 200px 1fr;
+            height: 100vh;
+        }
+
+        .tren {
+            grid-area: tren;
+            background-color: #b20034;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+      
+        header {
+            grid-area: header;
+            background-color: #d9534f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #5cb85c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        main {
+            grid-area: content;
+            background-color: #f0ad4e;
+            padding: 20px;
+        }
+
+        .content {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .image {
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            margin-right: 20px;
+        }
+
+        .text {
+            flex: 1;
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .duoi {
+            grid-area: duoi;
+            background-color: rgb(0, 116, 73);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(17, 106, 100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+

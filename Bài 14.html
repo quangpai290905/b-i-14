@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố cục trang web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "tren header header"
+                "nav content content"
+                "duoi footer footer";
+            grid-template-rows: 50px 1fr 50px;
+            grid-template-columns: 200px 1fr;
+            height: 100vh;
+        }
+
+        .tren {
+            grid-area: tren;
+            background-color: #b20034;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 5px solid black;
+            
+        }
+      
+        header {
+            grid-area: header;
+            background-color: #d9534f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            border-bottom: 5px solid black;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #5cb85c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            border-right: 5px solid black;
+        }
+
+        main {
+            grid-area: content;
+            background-color: #af7650;
+            padding: 20px;
+        }
+
+        .content {
+            display: flex;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+        }
+        .content img {
+            width: 60%;
+            height:60%;
+
+        }
+        
+        .content p {
+            margin-top: 0;
+        }
+
+
+        .duoi {
+            grid-area: duoi;
+            background-color: rgb(17, 106, 100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            border-right: 5px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(17, 106, 100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            border-top: 5px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tren">
+        </div>
+        <header>
+            Header
+        </header>
+        <nav>
+            Nav
+        </nav>
+        <main>
+            <div class="content">
+                <img src="1.png" alt="Image placeholder">
+            </div>
+        </main>
+        <div class="duoi">
+        </div>
+        <footer>
+            Footer
+        </footer>
+    </div>
+</body>
+</html>
